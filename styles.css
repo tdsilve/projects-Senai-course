@@ -1,0 +1,146 @@
+:root{
+    --header-height: 50px;
+    --text-color: #fff;
+    --git-hub-color: #000;
+    --yotube-color: #f00;
+    --tiktok-color: rgb(238, 29, 82);
+    --twitter-color: #55acee;
+}
+/* Global styles */
+*,
+*::after,
+*::before
+{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    
+}
+html
+{
+    font-size: 1.1rem;
+}
+li
+{
+    list-style: none;
+}
+a{
+    text-decoration: none;
+    cursor: pointer;
+}
+section{
+    padding: 2em 1em;
+}
+/* Not global styles */
+body
+{
+    background: url('./medias/background.png');
+    font-size: 100%;
+    color: var(--text-color);
+    font-family: 'Roboto', sans-serif;
+}
+.section-title
+{
+    margin-bottom: 2rem;
+}
+#bg-video{
+    display: none;
+}
+header
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: var(--header-height);
+    padding: 1em;
+}
+nav li{
+    display: inline-block;
+    margin-right: .5em;
+}
+.nav-link{
+    color: var(--text-color);
+    font-size: 1rem;
+    font-weight: 700;
+    white-space: nowrap;
+    font-family: inherit;
+}
+.nav-link:hover{
+    color: hsl(214, 82%, 61%);
+    text-shadow: 1px 1px 3px #fff;
+}
+main{
+    padding: 2em;
+    text-align: center;
+}
+main > p{
+    font-size: 1.2rem;
+}
+.mgTopBotton-1em
+{
+    margin: 1em 0;
+}
+i .fab{
+    font-family: initial;
+}
+.fab{
+    font-size: 2rem;
+    display: inline-block;
+    margin-right: 1em;
+    text-shadow: 1px -1px 1px #fff,
+    -1px 1px 1px #fff;
+}
+.fa-github
+{
+    color: #000;
+}
+.fa-youtube
+{
+    color: var(--yotube-color);
+}
+.fa-tiktok{
+    color: var(--tiktok-color);
+}
+.fa-twitter{
+    color: var(--twitter-color);
+}
+.social-media
+{
+    display: flex;
+    justify-content: center;
+}
+
+@media only screen and (min-width: 750px)
+{
+    .fab{
+        text-shadow: 1px -1px 1px #fff,
+        -1px 1px 1px #fff;
+    }
+    .fa-github
+    {
+        color: rgb(11, 11, 11);
+    }
+    #bg-video
+    {
+        display: block;
+        position: fixed;
+        z-index: -1;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+    }
+}
+/* Set the video's width to 100% and scale its height when the screen is twoo wide */
+@media (min-aspect-ratio: 16/9){
+    #bg-video{
+        width: 100%;
+        height: auto;
+    }
+}
+/* Set the video's height to 100% and scale its width when the screen is twoo wide  */
+@media (max-aspect-ratio: 16/9){
+    #bg-video{
+        width: auto;
+        height: 100%;
+    }
+}
