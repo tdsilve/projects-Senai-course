@@ -65,9 +65,8 @@ nav li{
     white-space: nowrap;
     font-family: inherit;
 }
-.nav-link:hover{
-    color: hsl(214, 82%, 61%);
-    text-shadow: 1px 1px 3px #fff;
+.activate{
+    text-decoration: underline;
 }
 main{
     padding: 2em;
