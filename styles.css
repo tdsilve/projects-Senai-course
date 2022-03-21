@@ -65,7 +65,7 @@ nav li{
     white-space: nowrap;
     font-family: inherit;
 }
-.activate{
+.active{
     text-decoration: underline;
 }
 main{
