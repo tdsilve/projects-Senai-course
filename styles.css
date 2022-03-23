@@ -41,6 +41,7 @@ body
 }
 .section-title
 {
+    margin-top: 1rem;
     margin-bottom: 2rem;
 }
 #bg-video{
