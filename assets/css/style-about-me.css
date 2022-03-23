@@ -1,0 +1,13 @@
+table, 
+th, 
+td
+{
+    border: 2px solid #e3e3e3;
+    border-collapse: collapse;
+    padding: .5em;
+}
+tr:hover:not(.row-header)
+{
+    background-color: hsl(0, 10%, 59%);
+}
+
