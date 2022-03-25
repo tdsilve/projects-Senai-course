@@ -10,42 +10,55 @@
     <title>Form</title>
 </head>
 <body class="flex-center">
-    <form action="#" class="loginForm">
-        <h3 class="formTitle">Contact Form</h3>
-       <label for="username">Name</label>
-       <input type="text" name="username" id="username" placeholder="Enter your name">
-       <label for="email">Email</label>
-       <input type="email" name="email" id="email" placeholder="Enter your email">
-       <fieldset>
-        <legend>What are your interests?</legend>
-        <div class="flex-center flex-justify-left">
-            <input type="checkbox" id="front-end" name="interest" value="front-end">
-            <label for="front-end"> Front End</label>
-        </div>
-       <div class="flex-center flex-justify-left">
-        <input type="checkbox" id="backend" name="interest" value="backend">
-        <label for="backend"> Backend</label><br>
-       </div>
-       <div class="flex-center flex-justify-left">
-        <input type="checkbox" id="mobile" name="interest" value="mobile">
-        <label for="vehicle3"> Mobile</label>
-       </div>
-       
-       </fieldset>
-
-       <fieldset class="flex-center flex-justify-left">
-           <legend>Do you like to receive our emails?</legend>
-           <span class="flex-center">
-            <input type="radio" name="receber-emails" id="yes">
-            <label for="yes">Yes</label>
-           </span>
-           <span class="flex-center">
-            <input type="radio" name="receber-emails" id="no">
-            <label for="yes">No</label>
-           </span>
-      
-       </fieldset>
-       <button type="submit" class="form-btn">Submit</button>
-    </form>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="../index.html" class="nav-link">Home</a></li>
+                <li><a href="./projects.html" class="nav-link">Projects</a></li>
+                <li><a href="./aboutMe.html" class="nav-link">About me</a></li>
+                <li><a href="./form.html" class="nav-link active">Contact me</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <form action="#" class="loginForm">
+            <h3 class="formTitle">Contact Form</h3>
+           <label for="username">Name</label>
+           <input type="text" name="username" id="username" placeholder="Enter your name">
+           <label for="email">Email</label>
+           <input type="email" name="email" id="email" placeholder="Enter your email">
+           <fieldset>
+            <legend>What are your interests?</legend>
+            <div class="flex-center flex-justify-left">
+                <input type="checkbox" id="front-end" name="interest" value="front-end">
+                <label for="front-end"> Front End</label>
+            </div>
+           <div class="flex-center flex-justify-left">
+            <input type="checkbox" id="backend" name="interest" value="backend">
+            <label for="backend"> Backend</label><br>
+           </div>
+           <div class="flex-center flex-justify-left">
+            <input type="checkbox" id="mobile" name="interest" value="mobile">
+            <label for="vehicle3"> Mobile</label>
+           </div>
+           
+           </fieldset>
+    
+           <fieldset class="flex-center flex-justify-left">
+               <legend>Do you like to receive our emails?</legend>
+               <span class="flex-center">
+                <input type="radio" name="receber-emails" id="yes">
+                <label for="yes">Yes</label>
+               </span>
+               <span class="flex-center">
+                <input type="radio" name="receber-emails" id="no">
+                <label for="yes">No</label>
+               </span>
+          
+           </fieldset>
+           <button type="submit" class="form-btn">Submit</button>
+        </form>
+    </main>
+   
 </body>
 </html>
