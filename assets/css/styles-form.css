@@ -23,6 +23,9 @@ body
     background-size: cover;
     padding: 1em;
 }
+nav{
+    text-align: center;
+}
 .loginForm{
     display: flex;
     flex-direction: column;
