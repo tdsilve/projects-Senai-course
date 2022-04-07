@@ -27,10 +27,9 @@ window.addEventListener('keydown', (e) => {
 function addTodoTask(){
   const task = getItem('#task');
   const ul = getItem('#list');
-  
+
   //only add an item if the user wrote something
   if (task.value){
-    console.log('hello');
      const listItem = document.createElement('li');
      listItem.classList.add('list-group');
     //Create an item as the commented html markut above
@@ -40,6 +39,7 @@ function addTodoTask(){
     const input = document.createElement('input');
     input.type = 'checkbox';
     input.classList.add("form-check-input" );
+    input.onclick = function (){ return findCheckedInputs(this, listItem) };
 
     const label = document.createElement('label');
     label.classList.add('form-check-label');
@@ -60,6 +60,19 @@ function addTodoTask(){
   }
  
 }
+
+function findCheckedInputs(checkbox, listItem){
+  //The added items are not saved in memory, because of that we add this function when create the input type checkbox element
+  console.log('clicked');
+
+  //Check if input checkbox is checked and remove it after one second
+  if (checkbox.checked == true){
+    console.log('checked');
+    listItem.style.display = 'none';
+  }
+
+}
+
 
 function isEnterKeyPressed(keyCode){
   return keyCode === 'Enter';
