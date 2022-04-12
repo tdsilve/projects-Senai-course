@@ -10,4 +10,5 @@ I am building this homepage based on the course's content.
 ## Projects:
 1. Homepage: on this project I have to create a webpage with 3 pages. The main goal is to practice how to create a website with HTML and CSS.
 2. Calculator: the main goal on this project is to practice coding and create a project with HTML, CSS and vanilla JavaScript.
-3. Todo List with Vanilla JavaScript, HTML and Boostrap: the main goal is to create a todo list on which a new task will be add when the user click a button or push the 'Enter'key. And a taks is removed when checked.
+3. Todo List with Vanilla JavaScript, HTML and Boostrap: the main goal is to create a todo list on which a new task will be add when the user click a button or push the 'Enter'key. And a taks is removed when checked. We use local storage to storage a list of tasks, and when the user add a new task, this is going to be saved on local storage.
+4. Todo list with react js
