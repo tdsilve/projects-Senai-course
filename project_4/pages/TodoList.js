@@ -1,23 +1,18 @@
-import React, { useState } from 'react'
+import styles from '../styles/TodoList.module.css'
 
-export default function TodoList({list}) {
-  const [checked, setChecked] = useState(false);
+import TodoListItem from "./TodoListItem";
 
-  const handleClick = (e) => {
-    setChecked(e.target.checked);
-    console.log(checked)
+export default function TodoList({ list }) {
+  if (list === null){
+    return (<p className={`badge ${styles.corAzul}`}>Você ainda não tem tarefas</p>)
   }
-
-  return (
-       <ul className="list-group">
-        {list.map((task, index) => {
-             
-          return <li key={index} className="list-group-item">
-              <input className="form-check-input me-3" type="checkbox" onClick={handleClick}/>
-              <label className={`form=check-label ${checked ? 'todo-done' : ''}`}>{task}</label>
-            </li> 
-          })}
-      </ul>
-
-  )
+  return list.length == 0 ? (
+    <p className={`badge ${styles.corAzul}`}>Você ainda não tem tarefas</p>
+  ) : (
+    <ul className="list-group">
+      {list.map((todo, index) => {
+        return <TodoListItem todo={todo} index={index} key={index} />;
+      })}
+    </ul>
+  );
 }
