@@ -25,49 +25,58 @@ window.addEventListener('keydown', (e) => {
 })
 
 function addTodoTask(){
-  const task = getItem('#task');
-  const ul = getItem('#list');
-
+  
   //only add an item if the user wrote something
+  const task = getItem('#task');
   if (task.value){
-     const listItem = document.createElement('li');
-     listItem.classList.add('list-group');
-    //Create an item as the commented html markut above
-    const div = document.createElement('div');
-    div.classList.add("form-check");
-
-    const input = document.createElement('input');
-    input.type = 'checkbox';
-    input.classList.add("form-check-input" );
-    input.onclick = function (){ return findCheckedInputs(this, listItem) };
-
-    const label = document.createElement('label');
-    label.classList.add('form-check-label');
-
-    const taskDescription = document.createTextNode(task.value);
-    label.appendChild(taskDescription);
-
-    //The order matters! The first child is an input and the second a label!
-    div.appendChild(input);
-    div.appendChild(label);
-
-    listItem.appendChild(div);
-
-    ul.appendChild(listItem);
-    
+    addTodo(task.value);
+    //Add new task to local storage
+    savedTodoList.push({title: task.value, done: false})
     //Clean the taks description
     task.value = '';
+   
   }
  
 }
 
-function findCheckedInputs(checkbox, listItem){
+function addTodo(value){
+
+  const ul = getItem('#list');
+  const listItem = document.createElement('li');
+  listItem.classList.add('list-group');
+ //Create an item as the commented html markut above
+ const div = document.createElement('div');
+ div.classList.add("form-check");
+
+ const input = document.createElement('input');
+ input.type = 'checkbox';
+ input.classList.add("form-check-input" );
+ input.onclick = function (){ return findCheckedInputs(this, listItem, label) };
+
+ const label = document.createElement('label');
+ label.classList.add('form-check-label');
+
+ const taskDescription = document.createTextNode(value);
+ label.appendChild(taskDescription);
+
+ //The order matters! The first child is an input and the second a label!
+ div.appendChild(input);
+ div.appendChild(label);
+
+ listItem.appendChild(div);
+
+ ul.appendChild(listItem);
+ 
+}
+
+function findCheckedInputs(checkbox, listItem, label){
   //The added items are not saved in memory, because of that we add this function when create the input type checkbox element
   console.log('clicked');
 
   //Check if input checkbox is checked and remove it after one second
   if (checkbox.checked == true){
     console.log('checked');
+    label.style.textDecoration = 'line-through';
     listItem.style.display = 'none';
   }
 
@@ -81,4 +90,25 @@ function isEnterKeyPressed(keyCode){
 function getItem(item){
   return document.querySelector(item);
 }
+
+//TodoList to be saved
+// const localTodoList = [
+//   {
+//     'title': "Tarefa armazenada",
+//     done: true
+//   },
+//   {
+//     'title': "Tarefa armazenada 2",
+//     done: false
+//   }
+// ];
+
+// Use local storage
+const storage = window.localStorage;
+const savedTodoList = JSON.parse(storage.getItem('todoList'));
+console.log(savedTodoList);
+savedTodoList.map((todo) => {
+    addTodo(todo.title);
+})
+
 
