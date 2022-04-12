@@ -7,16 +7,40 @@
   <title>Document</title>
 
   <script>
-    fetch('https://swapi.dev/api/people', {
-      method: 'GET'
-    }).then((res) => {
-      return res.json();
-    }).then((res) => {
-      const personagens = res.results;
-      personagens.map((char) => {
-        console.log(char.name);
-      })
-    })
+
+
+// 1 Get data from star wars api and print on console
+    // fetch('https://swapi.dev/api/people', {
+    //   method: 'GET'
+    // }).then((res) => {
+    //   return res.json();
+    // }).then((res) => {
+    //   const personagens = res.results;
+    //   personagens.map((char) => {
+    //     console.log(char.name);
+    //   })
+    // })
+
+// 2 Learning asyn await
+function resolverDepois(x){
+  return new Promisse( resolve => {
+    setTimeout(() => {
+      resolve(x);
+    }, 3000);
+  });
+
+  async function adicionar(x){
+    let a = await resolverDepois(20);
+    let b = await resolverDepois(50);
+    return x + a + b;
+
+  }
+
+  adicionar(10).then((retorno) => {
+    console.log(retorno);
+  });
+}
+
   </script>
 </head>
 <body>
